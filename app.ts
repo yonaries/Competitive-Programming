@@ -1,4 +1,4 @@
 import { fizzBuzz } from "./codes/fizzBuzz";
 
 //leet code
-console.log(fizzBuzz(15));
+console.log(fizzBuzz(5));
