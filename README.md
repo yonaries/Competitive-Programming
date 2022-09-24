@@ -1,5 +1,5 @@
 # MUST READ
-> :rocket: questions with there own directory are leetcode's questions other are found in codes directory
+> :rocket: questions with there own directory are leetcode's questions other are found in codes directory.
 > :rocket: for all leet code questions I use LeetHub Browser Extensions to automate the syncing to my github repo
 
 I have used typescript to implement the solution.
