@@ -1,6 +1,6 @@
 # MUST READ
 
->:rocket: questions with there own directory are leetcode's questions other are found in codes directory.<br>
+>:rocket: questions with there own directory are leetcode's questions other are found in solutions directory.<br>
 >:rocket: for all leet code questions I use LeetHub Browser Extensions to automate the syncing to my github repo
 
 I have used typescript to implement the solution and optimize the code as much as possible.<br>
