@@ -1,7 +1,7 @@
 function isValid(s: string): boolean {
     const opened: string[] = []
-    
-    for(let i=0;i<s.length;i++){
+
+    for (let i = 0; i < s.length; i++) {
         const top = opened[opened.length - 1]
         const brc = s[i]
         if (brc === '(' || brc === '[' || brc === '{') opened.push(brc)

@@ -1,10 +1,10 @@
-import { fizzBuzz } from "./codes/fizzBuzz";
-import { gradingStudents } from "./codes/hackerRank_graduatingStudents";
-import { hackerRankBubbleSort } from "./codes/hackerRank_BubbleSort";
-import { hackerRank_countingSort } from "./codes/hackerRank_countingSort";
-import { countingValleys } from "./codes/hackerRank_countingValleys";
-import { dominoPiling } from "./codes/codeForce_dominoPiling";
-import { theatreSquare } from "./codes/codeForce_TheatreSquare";
+import { fizzBuzz } from "./solutions/fizzBuzz";
+import { gradingStudents } from "./solutions/hackerRank_graduatingStudents";
+import { hackerRankBubbleSort } from "./solutions/hackerRank_BubbleSort";
+import { hackerRank_countingSort } from "./solutions/hackerRank_countingSort";
+import { countingValleys } from "./solutions/hackerRank_countingValleys";
+import { dominoPiling } from "./solutions/codeForce_dominoPiling";
+import { theatreSquare } from "./solutions/codeForce_TheatreSquare";
 
 // Hack rank - Easy Graduating students
 // console.log(graduatingStudents([73, 67, 38, 33,]))
