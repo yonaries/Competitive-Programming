@@ -2,7 +2,7 @@ function reverseParentheses(s: string): string {
     let stack:string[] = []
     const str = s.split('');
     
-    for(let crr of str){
+    str.forEach(crr => {
         if(crr === ')'){
             var letter = stack.pop();
             let temp = []
@@ -15,6 +15,6 @@ function reverseParentheses(s: string): string {
             
         }else stack.push(crr)
 
-    }
+    })
     return stack.join('');
 };
