@@ -1,25 +1,19 @@
 no_cards = int(input())
 
 
-def playersSum(cards, length):
-    player1 = 0
-    player2 = 0
-
-    left = 0
-    right = length-1
-
-    while left <= right:
-        player1 += cards[left]
-        player2 += cards[right]
-
-        if left == right:
-            player2 -= cards[right]
-
-        left += 1
-        right -= 1
-    return ' '.join([str(player2), str(player1)])
+def serja_and_dima(cards):
+    serja = 0
+    dima = 0
+    for i in range(len(cards)):
+        if i % 2 == 0:
+            serja += max(cards[0], cards[-1])
+            cards.remove(max(cards[0], cards[-1]))
+        else:
+            dima += max(cards[0], cards[-1])
+            cards.remove(max(cards[0], cards[-1]))
+    print(serja, dima)
 
 
-cards = list(map(int, input().split()))
-result = playersSum(cards, no_cards)
-print(result)
+if __name__ == '__main__':
+    cards = list(map(int, input().split()))
+    serja_and_dima(cards)
