@@ -1,25 +1,22 @@
 n_testcases = int(input())
 
 
-# def palindrome(arr):
-#     return arr == reversed(arr)
-
-def check(arr, left, right, removed):
+def kalindrome(arr):
+    left = 0
+    right = len(arr) - 1
+    removed = 0
     while left < right:
         if arr[left] != arr[right]:
             if arr[left] == removed:
                 left += 1
             elif arr[right] == removed:
-                right += 1
+                right -= 1
             else:
-                return False
+                return "NO"
         else:
             left += 1
-            right += 1
-
-
-def kalindrome(list):
-    left, right = 0, 0
+            right -= 1
+    return "YES"
 
 
 for _ in range(n_testcases):

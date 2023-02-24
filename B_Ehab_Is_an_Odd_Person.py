@@ -2,6 +2,7 @@ length = int(input())
 
 
 def ehab_is_odd(arr, length):
+    arr.sort()
     for i in range(1, length):
         if arr[i] + arr[i-1] % 2 == 1:
             arr[i], arr[i-1] = arr[i-1], arr[i]
