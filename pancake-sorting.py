@@ -1,7 +1,10 @@
-def rearrangeArray(self, nums: list[int]) -> list[int]:
-    n = len(nums)
-    for i in range(n):
-        nums[i] += (nums[nums[i]] % n) * n
-    for i in range(n):
-        nums[i] //= n
-    return nums
+# Definition for singly-linked list.
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+
+class Solution:
+    def deleteDuplicates():
+        return
