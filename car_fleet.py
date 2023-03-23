@@ -11,11 +11,10 @@ def carFleet(target: int, position: list[int], speed: list[int]) -> int:
         time = (target-pos)/velocity
 
         while stack and stack[-1] <= time:
-            stack.pop
+            stack.pop()
 
         stack.append(time)
 
-    print(stack)
     return len(stack)
 
 
