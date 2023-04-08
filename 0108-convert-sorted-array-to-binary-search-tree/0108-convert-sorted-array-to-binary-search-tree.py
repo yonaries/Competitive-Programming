@@ -6,7 +6,6 @@ class TreeNode:
         self.right = right
         
 class Solution:
-    
     def constructBST(self, nums, left, right):
         if left >= right: return None
         mid = (left + right)//2
