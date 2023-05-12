@@ -1,3 +1,7 @@
 {
-  "cSpell.words": ["brcs", "DDUUDDUDUUUD", "nums", "prts", "yohannes"]
+  "cSpell.words": ["brcs", "DDUUDDUDUUUD", "nums", "prts", "yohannes"],
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.autopep8"
+  },
+  "python.formatting.provider": "none"
 }
