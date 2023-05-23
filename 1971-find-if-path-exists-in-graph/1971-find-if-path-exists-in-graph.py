@@ -9,13 +9,13 @@ class Solution:
             adj_list[v].append(u)
     
         # Create a visited array to keep track of visited vertices
-        visited = [False] * n
+        visited = set()
     
         # Create a queue for BFS traversal
         queue = deque([source])
     
         # Mark the source vertex as visited
-        visited[source] = True
+        visited.add(source)
     
         # Perform BFS traversal
         while queue:
@@ -28,10 +28,10 @@ class Solution:
         
             # Explore all neighbors of the current node
             for neighbor in adj_list[node]:
-                if not visited[neighbor]:
+                if neighbor not in visited:
                     
                     # Mark the neighbor as visited and enqueue it
-                    visited[neighbor] = True
+                    visited.add(neighbor)
                     queue.append(neighbor)
     
         # If we have explored all possible paths and haven't found the destination, return False
