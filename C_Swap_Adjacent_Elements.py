@@ -15,6 +15,7 @@ def solve(n, nums, states):
 
 print(solve(n, nums, states))
 
+
 # def isSwapPossible(n, nums, states):
 #     for i in range(n-1):
 #         if (nums[i] > nums[i+1] and states[i] == 0) or (i > 0 and nums[i] < nums[i-1]):

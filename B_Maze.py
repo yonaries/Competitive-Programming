@@ -1,34 +1,54 @@
-def dfs(maze, visited, x, y, n, m, k):
-    if k[0] == 0:
+n, m, k = list(map(int, input().split()))
+
+matrix = []
+for i in range(n):
+    line = list(input())
+    matrix.append(line)
+
+
+def inbound(r, c):
+    if r > n or r < 0 or c < 0 or c > m:
+        return False
+    return True
+
+
+def isLeaf(i, j):
+    blocks = 0
+    if not inbound(i - 1, j) or matrix[i - 1][j] == "#" or matrix[i - 1][j] == "X" or not inbound(i + 1, j) or matrix[i + 1][j] == "#" or matrix[i + 1][j] == "X" or not inbound(i, j-1) or matrix[i][j-1] == "#" or matrix[i][j+1] == "X" or not inbound(i, j-1) or matrix[i][j-1] == "#" or matrix[i][j-1] == "X":
+        blocks += 1
+
+    return True if blocks == 3 else False
+
+
+def dfs(i, j):
+    if isLeaf(i,matrix j):
+        print('leaf')
+        matrix[i][j] = "X"
         return
 
-    visited[x][y] = True
-    k[0] -= 1
+    if inbound(i-1, j) and matrix[i-1][j] == '.':
+        return dfs(i-1, j)
 
-    for dx, dy in [(1, 0), (-1, 0), (0, 1), (0, -1)]:
-        nx, ny = x + dx, y + dy
-        if 0 <= nx < n and 0 <= ny < m and not visited[nx][ny] and maze[nx][ny] == '.':
-            dfs(maze, visited, nx, ny, n, m, k)
+    if inbound(i+1, j) and matrix[i+1][j] == '.':
+        return dfs(i+1, j)
+
+    if inbound(i, j-1) and matrix[i][j - 1] == '.':
+        return dfs(i, j-1)
+
+    if inbound(i, j+1) and matrix[i][j+1] == '.':
+        return dfs(i, j+1)
+
+    return
 
 
-# Read input
-n, m, k = map(int, input().split())
-maze = [list(input()) for _ in range(n)]
+def solve():
+    for i in range(n):  # find the first node of the connected component
+        for j in range(m):
+            if matrix[i][j] == ".":
+                dfs(i, j)  # run a dfs
+                return
 
-# Find the starting point
-for i in range(n):
-    for j in range(m):
-        if maze[i][j] == '.':
-            start_x, start_y = i, j
-            break
 
-# Perform DFS traversal
-visited = [[False] * m for _ in range(n)]
-dfs(maze, visited, start_x, start_y, n, m, [k])
-
-# Mark visited cells as "X" and print the modified maze
-for i in range(n):
-    for j in range(m):
-        if visited[i][j]:
-            maze[i][j] = 'X'
-    print(''.join(maze[i]))
+solve()
+for line in matrix:
+    print(''.join(line))
