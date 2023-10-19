@@ -5,9 +5,16 @@ class Solution:
         for num in nums:
             count[num] += 1
             
-        sorted_dict = dict(sorted(count.items(), key=lambda item: item[1], reverse=True))
-        sorted_list = [(key, value) for key, value in sorted_dict.items()]
-        only_keys = [t[0] for t in sorted_list]
+        heap = []
         
-        return only_keys[:k]
+        for num, freq in count.items():
+            if len(heap) < k:
+                heapq.heappush(heap, (freq, num))
+            else:
+                if freq > heap[0][0]:
+                    heapq.heappop(heap)
+                    heapq.heappush(heap, (freq, num))
+            
+        result = [x[1] for x in heap]
+        return result
         
